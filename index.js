@@ -1,31 +1,33 @@
 /* Refer to https://github.com/OleksiyRudenko/a-tiny-JS-world for the task details
    Complete the below for code reviewers' convenience:
 
-   Code repository: _put repo URL here_
+   Code repository:https://github.com/AnnaGrynchuk/a-tiny-JS-world
    Web app: _put project's github pages URL here_
    */
 
 // ======== OBJECTS DEFINITIONS ========
-// Define your objects here
 
+const inhebitant = function(species, name, gender, legs, hands, saying){
+    this.species = species;
+    this.name = name;
+    this.gender = gender;
+    this.legs = legs;
+    this.hands = hands;
+    this.saying = saying;
+};
 
-// ======== OUTPUT ========
-/* Use print(message) for output.
-   Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
+inhebitant.prototype.joinInhebitantsInString = function(){
+    
+     return [this.species,this.name,this.gender,this.legs,this.hands, this.saying].join("-");
+};
 
-   Message can contain HTML markup. You may also tweak index.html and/or styles.css.
-   However, please, REFRAIN from improving visuals at least until your code is reviewed
-   so code reviewers might focus on a single file that is index.js.
-   */
+let inhebitants = [];
+const dog = new inhebitant('dog', 'Toby', 'male', 4, 0, 'woof-woof!');
+const cat = new inhebitant('cat', 'Persik', 'male', 4, 0, 'meawww-meaww!');
+const woman = new inhebitant('human', 'Poly', 'female', 2, 2, 'I am hungry!');
+const man = new inhebitant('human', 'Alex', 'male', 2, 2, 'Lets go to bar!');
 
-/* Print examples:
-   print('ABC');
-   print('<strong>ABC</strong>');
-   print('<strong>ABC</strong>', 'div');
+inhebitants.push(dog,cat,woman,man);
 
-   print('human; John; male; 2; 2; Hello world!; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
-   */
-
-
+inhebitants.forEach(item =>print(item.joinInhebitantsInString()));
+ 
