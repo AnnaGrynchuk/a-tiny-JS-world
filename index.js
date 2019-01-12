@@ -48,8 +48,8 @@ class Cat extends Inhebitant {
 
 const dog = new Dog('dog', 'Toby', 'male', 'woof-woof!');
 const cat = new Cat('cat', 'Persik', 'male', 'meawww-meaww!');
-const woman = new Person('human', 'Poly', 'female', 'I am hungry!');
-const man = new Person('human', 'Alex', 'male', 'Lets go to bar!');
+const woman = new Person('woman', 'Poly', 'female', 'I am hungry!');
+const man = new Person('man', 'Alex', 'male', 'Lets go to bar!');
 let inhebitants = [dog,cat,woman,man];
 
 inhebitants.forEach(item =>print(item.joinInhebitantsInString()));
